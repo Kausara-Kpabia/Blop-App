@@ -9,7 +9,7 @@ const blogRouter = require("./routes/blogRoute");
 const { requireAuth, checkUser } = require("./middlewares/authMiddleware");
 
 const app = express();
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 
 connectToMongoDB();
 app.use(express.json());
