@@ -54,7 +54,7 @@ const handleErrors = (err) => {
 
 //CREATE A USER
 module.exports.signup_post = async (req, res) => {
-  const { first_name, last_name, email, password } = req.body;
+  const { firstname, lastname, email, password } = req.body;
   try {
     const user = await userModels.create({
       firstname,
@@ -73,11 +73,11 @@ module.exports.signup_post = async (req, res) => {
 };
 //CREATE A USER
 module.exports.login_get = async (req, res) => {
-  res.render("login");
+  res.send("login");
 };
 //CREATE A USER
 module.exports.signup_get = async (req, res) => {
-  res.render("signup");
+  res.send("signup");
 };
 
 //login user
