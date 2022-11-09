@@ -37,5 +37,5 @@ app.use("*", (req, res) => {
   return res.status(404).json({ message: "route not found" });
 });
 app.listen(PORT, (req, res) => {
-  console.log(`http://localhost:${PORT}`);
+  console.log(`App is listening on port:${PORT}`);
 });

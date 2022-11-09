@@ -5,15 +5,15 @@ require("dotenv").config();
 // handle errors
 const handleErrors = (err) => {
   console.log(err.message, err.code);
-  let errors = { first_name: "", last_name: "", email: "", password: "" };
+  let errors = { firstname: "", lastname: "", email: "", password: "" };
 
   // incorrect firstname
   if (err.message === "incorrect first_name") {
-    errors.first_name = "That name is not correct";
+    errors.firstname = "That name is not correct";
   }
   // incorrect lastname
   if (err.message === "incorrect last_name") {
-    errors.last_name = "That name is not correct";
+    errors.lastname = "That name is not correct";
   }
   // incorrect email
   if (err.message === "incorrect email") {
@@ -57,8 +57,8 @@ module.exports.signup_post = async (req, res) => {
   const { first_name, last_name, email, password } = req.body;
   try {
     const user = await userModels.create({
-      first_name,
-      last_name,
+      firstname,
+      lastname,
       email,
       password,
     });
