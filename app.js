@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/blogs", (req, res) => {
-  // res.render("blogs", { users: "new blogs" });
+  res.send("blogs", { users: "new blogs" });
 });
 // 404 route
 app.use("*", (req, res) => {

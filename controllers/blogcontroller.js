@@ -1,6 +1,6 @@
 const blogModel = require("../models/blogs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/users");
+const user = require("../models/users");
 // const decodedtoken = require("../middlewares/blogMiddleware");
 
 const handleErrors = (err) => {
@@ -14,10 +14,10 @@ const handleErrors = (err) => {
 
   // validation errors
   if (err.message.includes("blogg validation failed")) {
-    // console.log(err);
+        console.log(err);
     Object.values(err.errors).forEach(({ properties }) => {
-      // console.log(val);
-      // console.log(properties);
+      console.log(val);
+      console.log(properties);
       errors[properties.path] = properties.message;
     });
   }

@@ -52,11 +52,11 @@ const bloggSchema = new Schema({
 });
 
 // // fire a function before doc saved to db
-// bloggSchema.pre("save", async function (next) {
-//   // this.authorId = user.email;
-//   this.read_time = 60;
-//   next();
-// });
+bloggSchema.pre("save", async function (next) {
+   this.authorId = user.email;
+    this.read_time = 60;
+    next();
+});
 
 const Blog = mongoose.model("blogg", bloggSchema);
 
